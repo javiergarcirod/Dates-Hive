@@ -8,7 +8,7 @@
  ---- Convert Excel date format .
  select to_date(from_unixtime((cast(original_date as bigint)*86400)-2209161600)) as fecha
  from data; 
- where  store=502 and weekofyear(to_date(from_unixtime(UNIX_TIMESTAMP(original_date ,'dd/MM/yy')))) is NULL
+ where weekofyear(to_date(from_unixtime(UNIX_TIMESTAMP(original_date ,'dd/MM/yy')))) is NULL
  group by to_date(from_unixtime((cast(original_date as bigint)*86400)-2209161600)) ;
 
 
